@@ -1,5 +1,8 @@
 pipeline{
-    agent 'slave1-node'
+    agent {
+        label: 'slave1-node'
+    }
+
     
     stages{
         stage('terraform plan'){

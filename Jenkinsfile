@@ -8,6 +8,7 @@ pipeline{
                 script{
                     sh '''
                     terraform -v
+                    terraform init
                     terraform plan
                     '''
                 }

@@ -1,6 +1,6 @@
 access_key      = ""
 secret_key      = ""
-region          = ""
+region          = "ap-south-1"
 
 
 instance_type   = "t2.medium"

@@ -38,7 +38,7 @@ pipeline{
                 script{
                     withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'myaws', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
                         sh '''
-                        terraform apply
+                        terraform apply --auto-approve
                         '''
                     }
                 }

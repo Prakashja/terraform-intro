@@ -7,7 +7,7 @@ pipeline{
                     sh '''
                     ls -ltr
                     terraform init
-                    terraform plan -no-color
+                    terraform plan 
                     '''
                 }
             }

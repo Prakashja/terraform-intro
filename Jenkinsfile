@@ -9,7 +9,7 @@ pipeline{
                         sh '''
                         PATH=/usr/local/bin/terraform
                         /usr/local/bin/terraform --version
-                        t/usr/local/bin/terraform init
+                        /usr/local/bin/terraform init
                         '''
                     }
                 }
@@ -20,7 +20,7 @@ pipeline{
                 script{
                     withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws_credentials', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
                         sh '''
-                        terraform plan -no-color
+                        /usr/local/bin/terraform plan -no-color
                         '''
                     }
                 }
@@ -39,7 +39,7 @@ pipeline{
                 script{
                     withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws_credentials', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
                         sh '''
-                        terraform apply --auto-approve
+                        /usr/local/bin/terraform apply --auto-approve
                         '''
                     }
                 }

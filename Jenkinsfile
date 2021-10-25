@@ -45,5 +45,16 @@ pipeline{
                 }
             }
         }
+        stage('terraform destroy'){
+            steps{
+                script{
+                    withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws_credentials', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
+                        sh '''
+                        /usr/local/bin/terraform destroy --auto-approve
+                        '''
+                    }
+                }
+            }
+        }        
     }
 }

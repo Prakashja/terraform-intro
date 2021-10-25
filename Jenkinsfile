@@ -7,7 +7,7 @@ pipeline{
                 script{
                     withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws_credentials', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
                         sh '''
-                        terraform --version
+                        sudo terraform --version
                         terraform init
                         '''
                     }

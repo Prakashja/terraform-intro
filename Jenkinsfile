@@ -7,6 +7,7 @@ pipeline{
                 script{
                     withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws_credentials', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
                         sh '''
+                        PATH=/usr/local/bin/terraform
                         terraform --version
                         terraform init
                         '''
